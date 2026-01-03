@@ -133,8 +133,10 @@ BEGIN
 		PRINT '-----------'
 		
 		SET @batch_end_time = GETDATE();
-		PRINT '>>Batch Load Duration: ' + CAST(DATEDIFF(second, @batch_start_time, @batch_end_time) AS NVARCHAR) + ' seconds';
-		PRINT '-----------'
+		PRINT '===============================================';
+		PRINT 'Loading Bronze Layer is Completed';
+		PRINT '		- Total Loading Duration: ' + CAST(DATEDIFF(second, @batch_start_time, @batch_end_time) AS NVARCHAR) + ' seconds';
+		PRINT '==============================================='
 	END TRY
 	BEGIN CATCH
 		PRINT '===============================================';
